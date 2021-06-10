@@ -5,12 +5,6 @@ namespace net = beast::net;
 namespace ssl = net::ssl;
 using tcp = boost::asio::ip::tcp;
 
-void RegisterKnowArgs(argshandler& args) {
-    args.AddKnownArg("p", "Specify the port number the server should run on");
-    args.AddKnownArg("dir", "Specify the document root");
-    args.AddKnownArg("t", "Specify the amount of threads the server will use");
-}
-
 int main(int argc, char* argv[])
 {
     config::Instance = std::make_unique<config::instance>(argc, argv);
