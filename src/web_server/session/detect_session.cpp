@@ -26,7 +26,7 @@ namespace web_server {
                 return;
             }
 
-            if (config.ssl_settings.accept_http || ip_ == "127.0.0.1") {
+            if (config.ssl_settings.accept_http || ip_ == "127.0.0.1" || ip_ == "::1") {
                 std::cout << "Request incoming: " << ip_ << "\n";
                 // Launch plain session
                 std::make_shared<plain_http_session>(std::move(stream_), std::move(buffer_), doc_root_)->run();
